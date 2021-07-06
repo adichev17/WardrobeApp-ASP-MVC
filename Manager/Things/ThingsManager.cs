@@ -22,12 +22,27 @@ namespace WardbApp.Manager.Things
             _userManager = userManager;
         }
 
-        public async Task<List<UsersThings>> GetAllThing(string UserId)
+        public async Task<List<GetThings>> GetAllThing(string UserId)
         {
-            var Things = await _context.UsersThings.Where(thn => thn.UserId == UserId).ToListAsync();
-            if (Things != null)
-                return Things;
-
+            var result = new List<GetThings>();
+            var ThingsOfUser = await _context.UsersThings.Where(user => user.UserId == UserId).ToListAsync();
+            foreach (var category in _context.CategoryClothing)
+            {
+                List<string> ThingsForCategory = ThingsOfUser
+                    .Where(cat => cat.CategoryId == category.Id)
+                    .Select(thing => thing.Image).ToList();
+                if (ThingsForCategory.Count != 0)
+                {
+                    var IncludeThings = new GetThings
+                    {
+                        Category = category.Name,
+                        IncludeThings = ThingsForCategory,
+                    };
+                    result.Add(IncludeThings);
+                }
+            }
+            if (result != null)
+                return result;
             return null;
         }
     }

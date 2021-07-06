@@ -23,12 +23,11 @@ namespace WardbApp.Controllers
 
 
         [HttpPost("/CreateThing/{UserId}")]
-        [Authorize]
         public async Task<IActionResult> CreateThing(PictureThingViewModel model, string UserId)
         {
             var NewThing = await _pictureManager.Create(model, UserId);
             if (NewThing != null)
-                return Json(NewThing);
+                return Ok();
 
             return UnprocessableEntity();
         }

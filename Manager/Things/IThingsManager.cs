@@ -9,6 +9,6 @@ namespace WardbApp.Manager.Things
 {
     public interface IThingsManager
     {
-        public Task<List<UsersThings>> GetAllThing(string UserId);
+        public Task<List<GetThings>> GetAllThing(string UserId);
     }
 }
