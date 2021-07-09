@@ -45,5 +45,10 @@ namespace WardbApp.Manager.Things
                 return result;
             return null;
         }
+
+        //public async Task<object> UploadingAnImage()
+        //{
+
+        //}
     }
 }
