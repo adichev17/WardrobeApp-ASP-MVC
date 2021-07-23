@@ -13,6 +13,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 using WardbApp.Domain;
+using WardbApp.Manager.Looks;
 using WardbApp.Manager.PictureThing;
 using WardbApp.Manager.Things;
 using WardbApp.Manager.Users;
@@ -37,6 +38,7 @@ namespace WardbApp
             services.AddScoped<IAccountManager, AccountManager>();
             services.AddScoped<IPictureManager, PictureManager>();
             services.AddScoped<IThingsManager, ThingsManager>();
+            services.AddScoped<ILookManager, LookManager>();
 
 
             services.AddIdentity<User, IdentityRole>()
