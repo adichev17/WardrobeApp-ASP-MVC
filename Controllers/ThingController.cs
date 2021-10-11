@@ -52,45 +52,6 @@ namespace WardbApp.Controllers
                 return Json(IsLoad);
 
             return UnprocessableEntity();
-
-            //var user = await _userManager.FindByIdAsync(UserId);
-            //if (user == null)
-            //    return Unauthorized();
-
-            //string wwwRootPath = _environment.WebRootPath;
-            //string fileName = Path.GetFileNameWithoutExtension(ImageFile.FileName);
-            //string extension = Path.GetExtension(ImageFile.FileName);
-            //if (extension.ToLower() != ".jpg" && extension.ToLower() != ".png") return BadRequest();
-            //fileName = $"{fileName}{extension}";
-            //string path = Path.Combine(@$"{wwwRootPath}/Images/{fileName}");
-            //if (System.IO.File.Exists(path)) { fileName += "_"; path = Path.Combine(@$"{wwwRootPath}/Images/{fileName}"); }
-            //using (var fileStream = new FileStream(path, FileMode.Create))
-            //{
-            //    await ImageFile.CopyToAsync(fileStream);
-            //}
-            //string url = "https://wardrobeapp.azurewebsites.net/Images/" + $"{fileName}";
-            //var responce = new { Name = fileName, URL = url };
-
-
-            //var category = await _context.CategoryClothing.FirstOrDefaultAsync(name => Category == name.Name);
-            //var season = await _context.SeasonClothing.FirstOrDefaultAsync(name => Season == name.Name);
-            //if (category != null && season != null)
-            //{
-            //    UsersThings UsersThings = new UsersThings
-            //    {
-            //        User = user,
-            //        Category = category,
-            //        Season = season,
-            //        Image = responce.URL,
-            //    };
-
-            //    await _context.UsersThings.AddAsync(UsersThings);
-            //    await _context.SaveChangesAsync();
-
-            //}
-            //else { return UnprocessableEntity(); }
-
-            //return Json(responce);
         }
 
     }
