@@ -16,7 +16,7 @@ link: [https://youtu.be/t9ebX1XbUs4](https://www.youtube.com/watch?v=2STiQVxxECM
 - ASP NET MVC
 - EF Core 5
 - MS SQL SERVER
-- React-Native (repository: [https://github.com/denis200/react_native_scan_app_v2](https://github.com/adichev17/FitnessApp-React_Frontend))
+- React-Native (repository: https://github.com/adichev17/WardrobeApp-React-native)
 
 ## Getting Started
 
